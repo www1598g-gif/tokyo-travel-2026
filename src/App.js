@@ -1508,15 +1508,21 @@ export default function TravelApp() {
             <div className="relative w-full max-w-md h-full flex flex-col items-center overflow-hidden">
               <TokyoNightArt />
               <div className="relative z-10 flex flex-col items-center w-full px-8 h-full pt-32">
+                
+                
+                
                 <div
                   className="mb-4"
                   style={{
+                    marginLeft: '-36px',
                     transition: isUnlocking ? 'transform 1.0s cubic-bezier(0.4,0,1,1), opacity 1.0s ease' : 'none',
-                    transform: isUnlocking ? 'translateX(130vw) translateY(-30px) rotate(8deg)' : 'translateX(0) translateY(0) rotate(0deg)',
+                    transform: isUnlocking ? 'translateX(130vw) translateY(-12px) rotate(6deg)' : 'translateX(0) translateY(0) rotate(0deg)',
                     opacity: isUnlocking ? 0 : 1,
                   }}
                 >
-                  <Plane size={64} className="text-white" strokeWidth={1.5} />
+                  <div style={{ transform: 'rotate(32deg)', filter: 'drop-shadow(0 0 10px rgba(242,200,121,0.45))' }}>
+                    <Plane size={56} className="text-white" strokeWidth={1.5} />
+                  </div>
                 </div>
 
                 <h2 className="text-3xl font-bold mb-1 text-white tracking-tight" style={{ fontFamily: "'Noto Serif TC', serif" }}>東京 Tokyo 2026</h2>
