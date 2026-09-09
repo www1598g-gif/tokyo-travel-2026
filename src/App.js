@@ -1571,7 +1571,32 @@ export default function TravelApp() {
         {isLocked && (
           <div className="fixed inset-0 z-[100] flex justify-center h-screen w-full" style={{ background: '#0B0E2A' }}>
             <div className="relative w-full max-w-md h-full flex flex-col items-center overflow-hidden">
-              <TokyoNightArt />
+               
+               
+               
+               {/* <TokyoNightArt /> */}
+              <div
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/images/jungle1.jpeg)`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center 70%',
+                }}
+              >
+                <div className="absolute inset-0 bg-black/30"></div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
               <div className="relative z-10 flex flex-col items-center w-full px-8 h-full pt-32">
                 
                 
