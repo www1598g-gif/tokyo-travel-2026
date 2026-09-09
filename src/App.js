@@ -1430,16 +1430,9 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
 
 
      </div>
-
-
-
-
-        
-        </section> 
-
-
-
-
+  )}
+        </section>
+        </section>
       )}
 
       <section className="bg-white p-6 rounded-2xl border border-stone-100 mb-6">
