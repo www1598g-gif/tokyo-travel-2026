@@ -793,7 +793,7 @@ const UTILS_DATA = {
     { type: '回程', date: '9/27 (日)', flightNo: 'MM627', time: '22:15 起飛', airline: '樂桃航空 Peach', from: '成田', fromCode: 'NRT', fromTerminal: '', to: '台北', toCode: 'TPE', toTerminal: 'T1' },
   ],
   accommodation: {
-    name: 'Airbnb（田端新町）',
+    name: 'Airbnb',
     address: '東京都北区田端新町1-6-7',
     station: '最寄站：JR「西日暮里」站',
     keyNote: '鑰匙在建物左側的鑰匙盒（Key Box）內，密碼「0708」',
@@ -951,7 +951,7 @@ const TokyoTips = () => {
               <div className="min-w-[24px] text-rose-600 font-bold mt-1"><KeyRound size={18} /></div>
               <div>
                 <strong className="text-stone-900 block mb-1">住宿鑰匙盒</strong>
-                <p className="text-xs text-stone-500">Airbnb 鑰匙在建物左側鑰匙盒內，密碼 0708，退房記得把鑰匙放回鎖好。</p>
+                <p className="text-xs text-stone-500">Airbnb 鑰匙在建物左側鑰匙盒內，密碼在工具頁，退房記得把鑰匙放回鎖好。</p>
               </div>
             </div>
           </div>
@@ -1294,7 +1294,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
           <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
           <h3 className="flex items-center gap-2 font-bold text-white mb-2 relative z-10"><Wallet size={18} /> 公款記帳與分帳</h3>
           <p className="text-green-50 text-sm mb-6 relative z-10 font-medium">所有公費支出請統一記錄在此，系統會自動結算每個人該付多少錢。</p>
-          <a href="https://liff.line.me/1655320992-Y8GowEpw/g/t6Tf4q8GCMHz2D3YgoWyMX" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full bg-white py-3.5 rounded-xl font-bold active:scale-95 transition-all relative z-10" style={{ color: '#06C755' }}>
+          <a href="https://liff.line.me/1655320992-Y8GowEpw/g/bhuFPhrYzsnkAeC8YoTU8M" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full bg-white py-3.5 rounded-xl font-bold active:scale-95 transition-all relative z-10" style={{ color: '#06C755' }}>
             開啟 Lightsplit 分帳群組 <ArrowRight size={16} />
           </a>
         </section>
@@ -1304,22 +1304,28 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
         <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Plane size={18} className="text-blue-500" /> 航班詳細資訊</h3>
         {UTILS_DATA.flights.map((f, i) => <FlightCard key={i} {...f} />)}
       </section>
-
       <section className="bg-white p-6 rounded-2xl border border-stone-100">
         <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Home size={18} className="text-orange-500" /> 住宿資訊</h3>
-        <div className="rounded-xl p-4 border relative" style={{ background: '#FBF3E4', borderColor: '#F2C879' }}>
-          <div className="flex justify-between items-start mb-2">
-            <div><span className="text-[10px] text-stone-400 font-bold">Airbnb</span><h4 className="font-bold text-base">{UTILS_DATA.accommodation.name}</h4></div>
-            <span className="text-xs font-bold bg-white px-2 py-1 rounded border border-stone-200 whitespace-nowrap">{UTILS_DATA.accommodation.dates}</span>
+        {isMember ? (
+          <div className="rounded-xl p-4 border relative" style={{ background: '#FBF3E4', borderColor: '#F2C879' }}>
+            <div className="flex justify-between items-start mb-2">
+              <div><span className="text-[10px] text-stone-400 font-bold">Airbnb</span><h4 className="font-bold text-base">{UTILS_DATA.accommodation.name}</h4></div>
+              <span className="text-xs font-bold bg-white px-2 py-1 rounded border border-stone-200 whitespace-nowrap">{UTILS_DATA.accommodation.dates}</span>
+            </div>
+            <p className="text-xs text-stone-500 mb-1"><MapPin size={10} className="inline mr-1" />{UTILS_DATA.accommodation.address}</p>
+            <p className="text-xs text-stone-500 mb-3"><Train size={10} className="inline mr-1" />{UTILS_DATA.accommodation.station}</p>
+            <div className="flex items-start gap-2 bg-white rounded-lg p-3 border border-rose-100 mb-4">
+              <KeyRound size={14} className="text-rose-500 mt-0.5 flex-shrink-0" />
+              <p className="text-xs text-stone-600 font-medium">{UTILS_DATA.accommodation.keyNote}</p>
+            </div>
+            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(UTILS_DATA.accommodation.mapQuery)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1.5 py-2.5 text-white rounded-lg text-xs font-bold" style={{ background: '#1B1F3B' }}><Navigation size={14} /> 導航到住宿</a>
           </div>
-          <p className="text-xs text-stone-500 mb-1"><MapPin size={10} className="inline mr-1" />{UTILS_DATA.accommodation.address}</p>
-          <p className="text-xs text-stone-500 mb-3"><Train size={10} className="inline mr-1" />{UTILS_DATA.accommodation.station}</p>
-          <div className="flex items-start gap-2 bg-white rounded-lg p-3 border border-rose-100 mb-4">
-            <KeyRound size={14} className="text-rose-500 mt-0.5 flex-shrink-0" />
-            <p className="text-xs text-stone-600 font-medium">{UTILS_DATA.accommodation.keyNote}</p>
+        ) : (
+          <div className="rounded-xl p-5 border border-stone-100 bg-stone-50 flex items-center gap-3">
+            <Lock size={16} className="text-stone-300 flex-shrink-0" />
+            <p className="text-xs text-stone-400 font-medium">住宿地址與鑰匙盒密碼僅團員可見。</p>
           </div>
-          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(UTILS_DATA.accommodation.mapQuery)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1.5 py-2.5 text-white rounded-lg text-xs font-bold" style={{ background: '#1B1F3B' }}><Navigation size={14} /> 導航到住宿</a>
-        </div>
+        )}
       </section>
 
       {isMember && (
@@ -1510,7 +1516,7 @@ export default function TravelApp() {
                     opacity: isUnlocking ? 0 : 1,
                   }}
                 >
-                  <Plane size={64} className="text-white -rotate-45" strokeWidth={1.5} />
+                  <Plane size={64} className="text-white" strokeWidth={1.5} />
                 </div>
 
                 <h2 className="text-3xl font-bold mb-1 text-white tracking-tight" style={{ fontFamily: "'Noto Serif TC', serif" }}>東京 Tokyo 2026</h2>
