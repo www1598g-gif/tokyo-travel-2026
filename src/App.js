@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   MapPin, Utensils, CloudSun, Wind, AlertCircle, Phone, Wallet, Plane,
   Home, ChevronDown, ChevronUp, Navigation, Loader2, CloudRain, Sun, Cloud,
-  Lock, KeyRound, Info, Compass, Sparkles, Droplets, Clock,
+  Lock, KeyRound, Info, Compass, Sparkles, Droplets, Clock, Signal,
   CheckCircle, Banknote, FileText, AlertTriangle, Settings, Trash2,
   ShoppingBag, Ban, Smartphone, RefreshCw, Edit3, Save, Eye, Ticket,
   Train, Building2, BookOpen, Music, Wine, Gem, PawPrint, ArrowRight,
@@ -1355,19 +1355,91 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
             </a>
           </div>
 
-          <div className="mt-3">
-            <button onClick={() => setShowEsim(!showEsim)} className="w-full flex items-center justify-between">
-              <h3 className="flex items-center gap-2 font-bold text-stone-800"><AlertTriangle size={18} className="text-blue-500" /> eSIM 出國防爆流量指南</h3>
-              {showEsim ? <ChevronUp size={18} className="text-stone-400" /> : <ChevronDown size={18} className="text-stone-400" />}
-            </button>
-            {showEsim && (
-              <div className="mt-4 p-4 bg-amber-50 rounded-2xl border border-amber-200 animate-fadeIn">
-                <p className="text-xs font-bold text-amber-700 mb-1 flex items-center gap-1"><AlertTriangle size={12} /> 提醒</p>
-                <p className="text-xs text-stone-600 leading-relaxed">背景App（如尋求來電辨識、雲端備份）在國外用eSIM時可能持續耗用流量，出發前建議關閉不必要App的行動數據，並確認沒開VPN。</p>
-              </div>
-            )}
-          </div>
+
+
+
+
+
+
+          
+{/* 佑任短句本 */}
+<a href="https://drive.google.com/file/d/1EPeIs8EED3Ul8bBv6hb0km7Lgfv7yY4l/view?usp=drive_link" target="_blank" rel="noreferrer"
+  className="flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 active:scale-95 transition-all"
+>
+  <div>
+    <div className="font-bold text-stone-800 dark:text-stone-100 text-sm">佑任の日語突發即用短句本</div>
+    <div className="text-[10px] text-amber-600 dark:text-amber-400">點我開啟 Google Drive 📖</div>
+  </div>
+  <ArrowRight size={16} className="text-amber-400" />
+</a>
+
+  
+{/* eSIM 防爆流量區塊 */}
+  <section className="mt-3 bg-white dark:bg-stone-800 p-6 rounded-2xl border border-stone-100 dark:border-stone-700 mb-6">
+
+    
+  <button
+    onClick={() => setShowEsim(!showEsim)}
+    className="w-full flex items-center justify-between"
+  >
+    <h3 className="flex items-center gap-2 font-bold text-stone-800 dark:text-stone-100">
+      <Signal size={18} className="text-blue-500" /> eSIM 出國防爆流量指南
+    </h3>
+    {showEsim ? <ChevronUp size={18} className="text-stone-400" /> : <ChevronDown size={18} className="text-stone-400" />}
+  </button>
+
+  {showEsim && (
+    <div className="mt-4 animate-fadeIn">
+
+   
+
+    <div className="mb-5 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-2xl border border-amber-200 dark:border-amber-800">
+      <p className="text-xs font-bold text-amber-700 dark:text-amber-300 mb-1 flex items-center gap-1">
+        <AlertTriangle size={12} /> Whoscall 用戶注意
+      </p>
+      <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+        開著 Whoscall 在國外使用 eSIM，後台「自動網站檢查」功能會持續消耗流量，可能吃掉 5-10GB。出發前請關閉此app的行動數據，並確認沒開VPN。
+      </p>
+    </div>
+
+    <div className="space-y-6">
+      <div>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xs font-bold bg-stone-800 text-amber-50 px-3 py-1 rounded-full font-mono tracking-wider">iOS</span>
+          <span className="text-xs text-stone-400 font-bold">大容量怪獸設定清單</span>
+        </div>
+        <img
+          src={process.env.PUBLIC_URL + '/images/esim_ios.jpg'}
+          alt="iOS eSIM 防爆流量設定"
+          className="w-full rounded-2xl border border-stone-100 dark:border-stone-700 shadow-sm"
+        />
+      </div>
+
+      <div>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xs font-bold bg-stone-800 text-amber-50 px-3 py-1 rounded-full font-mono tracking-wider">Android</span>
+          <span className="text-xs text-stone-400 font-bold">大容量怪獸設定清單</span>
+        </div>
+        <img
+          src={process.env.PUBLIC_URL + '/images/esim_android.jpg'}
+          alt="Android eSIM 防爆流量設定"
+          className="w-full rounded-2xl border border-stone-100 dark:border-stone-700 shadow-sm"
+        />
+      </div>
+    </div>
+
+
+     </div>
+
+
+
+
         </section>
+        </section> 
+
+
+
+
       )}
 
       <section className="bg-white p-6 rounded-2xl border border-stone-100 mb-6">
