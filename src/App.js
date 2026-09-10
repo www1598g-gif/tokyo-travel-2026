@@ -1578,7 +1578,7 @@ export default function TravelApp() {
               <div
                 className="absolute inset-0 w-full h-full"
                 style={{
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/images/jungle1.jpeg)`,
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/images/jungle2.jpeg)`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center 70%',
                 }}
