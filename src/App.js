@@ -809,7 +809,7 @@ const UTILS_DATA = {
     globalFree: '001-010-800-0885-0885',
   },
   notes: '九月仍是颱風季尾聲，出發前留意颱風動態與班機異動通知。\n住宿鑰匙盒密碼「0708」請勿外流，退房記得放回鑰匙盒鎖好。',
-  driveUrl: '',
+  driveUrl: 'https://drive.google.com/drive/folders/1ug9ArdSALUtTHR6zHTY5LeWRjl6B_u-I?usp=sharing',
 };
 
 // ============================================================
@@ -1303,6 +1303,18 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
       <section className="bg-white p-6 rounded-2xl border border-stone-100">
         <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Plane size={18} className="text-blue-500" /> 航班詳細資訊</h3>
         {UTILS_DATA.flights.map((f, i) => <FlightCard key={i} {...f} />)}
+
+        {isMember && (
+          <a href={UTILS_DATA.driveUrl} target="_blank" rel="noreferrer"
+            className="flex items-center justify-center gap-2 w-full py-3 mt-4 rounded-xl font-bold active:scale-95 transition-all"
+            style={{ background: '#FBF3E4', color: '#1B1F3B' }}
+          >
+            <Info size={16} /> 開啟電子機票 / 各種憑證
+          </a>
+        )}
+
+
+
       </section>
       <section className="bg-white p-6 rounded-2xl border border-stone-100">
         <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Home size={18} className="text-orange-500" /> 住宿資訊</h3>
@@ -1364,7 +1376,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
           
 {/* 佑任短句本 */}
 <a href="https://drive.google.com/file/d/1EPeIs8EED3Ul8bBv6hb0km7Lgfv7yY4l/view?usp=drive_link" target="_blank" rel="noreferrer"
-  className="flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 active:scale-95 transition-all"
+  className="mt-3 flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 active:scale-95 transition-all"
 >
   <div>
     <div className="font-bold text-stone-800 dark:text-stone-100 text-sm">佑任の日語突發即用短句本</div>
