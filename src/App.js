@@ -371,10 +371,10 @@ const OutfitPickerModal = ({ onClose }) => {
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div className="relative bg-white w-full max-w-md rounded-t-3xl shadow-2xl p-6" style={{ paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }} onClick={e => e.stopPropagation()}>
         <div className="w-10 h-1 bg-stone-200 rounded-full mx-auto mb-4" />
-        <h3 className="font-bold text-stone-800 dark:text-stone-100 text-base flex items-center gap-2 mb-4"><Sparkles size={18} className="text-amber-500" /> 選擇哪一天？</h3>
+        <h3 className="font-bold text-stone-800 text-base flex items-center gap-2 mb-4"><Sparkles size={18} className="text-amber-500" /> 選擇哪一天？</h3>
         <div className="grid grid-cols-2 gap-2 mb-5">
           {TRIP_DATES.map((d) => (
-            <button key={d.date} onClick={() => setSelected(d)} className={`py-3 rounded-xl text-sm font-bold border-2 transition-all ${selected.date === d.date ? 'text-white' : 'text-stone-500 border-stone-200 dark:border-white/10'}`} style={selected.date === d.date ? { background: '#E2472A', borderColor: '#E2472A' } : {}}>
+            <button key={d.date} onClick={() => setSelected(d)} className={`py-3 rounded-xl text-sm font-bold border-2 transition-all ${selected.date === d.date ? 'text-white' : 'text-stone-500 border-stone-200'}`} style={selected.date === d.date ? { background: '#E2472A', borderColor: '#E2472A' } : {}}>
               {d.label}
             </button>
           ))}
@@ -403,13 +403,13 @@ const OutfitGuide = () => {
   if (!isOpen)
     return (
       <div className="mx-6 mt-6 flex flex-col gap-2">
-        <button onClick={() => setIsOpen(true)} className="bg-white dark:bg-[#1E2142] shadow-sm border border-stone-100 dark:border-white/10 py-3 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 text-stone-600 dark:text-stone-300 w-full active:scale-95 transition-transform">
+        <button onClick={() => setIsOpen(true)} className="bg-white shadow-sm border border-stone-100 py-3 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 text-stone-600 w-full active:scale-95 transition-transform">
           <Info size={14} className="text-amber-500" /> 查看九月東京穿搭建議
         </button>
-        <button onClick={() => setShowOutfit(true)} className="bg-white dark:bg-[#1E2142] shadow-sm border border-stone-100 dark:border-white/10 py-3 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 text-stone-600 dark:text-stone-300 w-full active:scale-95 transition-transform">
+        <button onClick={() => setShowOutfit(true)} className="bg-white shadow-sm border border-stone-100 py-3 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 text-stone-600 w-full active:scale-95 transition-transform">
           <Sparkles size={16} className="text-amber-500" /> 今日穿搭 AI 建議
         </button>
-        <button onClick={() => setShowWeather(true)} className="bg-white dark:bg-[#1E2142] shadow-sm border-2 py-3 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 text-stone-800 dark:text-stone-100 w-full active:scale-95 transition-transform" style={{ borderColor: '#1B1F3B', boxShadow: '2px 2px 0 #1B1F3B' }}>
+        <button onClick={() => setShowWeather(true)} className="bg-white shadow-sm border-2 py-3 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 text-stone-800 w-full active:scale-95 transition-transform" style={{ borderColor: '#1B1F3B', boxShadow: '2px 2px 0 #1B1F3B' }}>
           <Sun size={14} className="text-amber-500" /> 日本在地權威天氣站
         </button>
 
@@ -420,12 +420,12 @@ const OutfitGuide = () => {
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
             <div className="relative bg-white w-full max-w-md rounded-t-3xl shadow-2xl p-6 border-t-4" style={{ borderColor: '#1B1F3B', paddingBottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }} onClick={e => e.stopPropagation()}>
               <div className="w-10 h-1 bg-stone-200 rounded-full mx-auto mb-4" />
-              <h3 className="font-bold text-stone-800 dark:text-stone-100 text-sm flex items-center gap-1.5 mb-5"><Wind size={16} className="text-blue-500" /> 日本在地權威觀測</h3>
+              <h3 className="font-bold text-stone-800 text-sm flex items-center gap-1.5 mb-5"><Wind size={16} className="text-blue-500" /> 日本在地權威觀測</h3>
               <div className="flex flex-col gap-2">
-                <button onClick={() => window.open('https://weathernews.jp/onebox/35.732000/139.766000/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 dark:text-stone-100 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🏠 西日暮里・田端（住宿一帶）</button>
-                <button onClick={() => window.open('https://weathernews.jp/onebox/35.693840/139.700280/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 dark:text-stone-100 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🎋 神保町・淺草</button>
-                <button onClick={() => window.open('https://weathernews.jp/onebox/35.658580/139.701640/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 dark:text-stone-100 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🛍️ 涉谷・原宿・新宿</button>
-                <button onClick={() => window.open('https://weathernews.jp/onebox/35.671690/139.764560/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 dark:text-stone-100 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🍷 銀座</button>
+                <button onClick={() => window.open('https://weathernews.jp/onebox/35.732000/139.766000/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🏠 西日暮里・田端（住宿一帶）</button>
+                <button onClick={() => window.open('https://weathernews.jp/onebox/35.693840/139.700280/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🎋 神保町・淺草</button>
+                <button onClick={() => window.open('https://weathernews.jp/onebox/35.658580/139.701640/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🛍️ 涉谷・原宿・新宿</button>
+                <button onClick={() => window.open('https://weathernews.jp/onebox/35.671690/139.764560/', '_blank')} className="w-full py-2.5 border-2 rounded-xl font-bold text-xs text-stone-800 active:scale-95" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>🍷 銀座</button>
               </div>
             </div>
           </div>
@@ -434,12 +434,12 @@ const OutfitGuide = () => {
     );
 
   return (
-    <div className="mx-6 mt-6 bg-white p-5 rounded-2xl border border-stone-100 dark:border-white/10 shadow-sm relative animate-fadeIn">
+    <div className="mx-6 mt-6 bg-white p-5 rounded-2xl border border-stone-100 shadow-sm relative animate-fadeIn">
       <button onClick={() => setIsOpen(false)} className="absolute top-3 right-3 text-stone-300 hover:text-stone-500"><ChevronUp size={18} /></button>
       <h3 className="flex items-center gap-2 font-bold text-base mb-3" style={{ color: '#1B1F3B', fontFamily: "'Noto Serif TC', serif" }}>
         <Sun size={18} className="text-amber-500" /> 九月東京穿搭指南
       </h3>
-      <div className="space-y-3 text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+      <div className="space-y-3 text-xs text-stone-600 leading-relaxed">
         <div className="flex items-start gap-3">
           <div className="bg-amber-100 p-1.5 rounded-full text-amber-600 flex-shrink-0"><Sun size={12} /></div>
           <div><strong>白天（26-30°C）</strong><br />悶熱潮濕，短袖透氣衣物為主，九月仍是颱風季尾聲，隨身帶把摺疊傘。</div>
@@ -623,13 +623,13 @@ const SharedWhiteboard = ({ isAdmin, isMember }) => {
     setToolState(t);
     if (canvasRef.current) canvasRef.current.style.cursor = t === 'eraser' ? 'cell' : t === 'text' ? 'text' : 'crosshair';
   };
-  const tbtn = (t) => `text-[9px] font-bold px-3 py-1.5 rounded-full border transition-all ${tool === t ? 'text-white' : 'bg-white text-stone-600 dark:text-stone-300 border-stone-300'}`;
+  const tbtn = (t) => `text-[9px] font-bold px-3 py-1.5 rounded-full border transition-all ${tool === t ? 'text-white' : 'bg-white text-stone-600 border-stone-300'}`;
 
   return (
     <section className="mt-4 rounded-[2rem] overflow-hidden border-2" style={{ borderColor: '#1B1F3B', boxShadow: '4px 4px 0 #1B1F3B' }}>
       <div className="flex items-center gap-2 px-4 py-2.5 border-b-2" style={{ background: '#F2C879', borderColor: '#1B1F3B' }}>
         <span className="text-[10px] font-bold tracking-widest uppercase text-stone-900">✏️ 共享塗鴉白板</span>
-        <span className="text-[9px] text-stone-600 dark:text-stone-300 ml-1">大家都在同一張畫布上！</span>
+        <span className="text-[9px] text-stone-600 ml-1">大家都在同一張畫布上！</span>
       </div>
       <canvas
         ref={canvasRef} width={480} height={320} className="block w-full bg-white"
@@ -649,11 +649,11 @@ const SharedWhiteboard = ({ isAdmin, isMember }) => {
         {COLORS.map(c => (
           <button key={c} onClick={() => { setColor(c); if (tool === 'eraser') setTool('pen'); }} className="w-5 h-5 rounded-full border-2 flex-shrink-0 transition-transform" style={{ background: c, borderColor: color === c ? '#1B1F3B' : 'transparent', transform: color === c ? 'scale(1.3)' : 'scale(1)' }} />
         ))}
-        <button onClick={undoLast} className="text-[9px] font-bold px-3 py-1.5 rounded-full border border-stone-400 text-stone-600 dark:text-stone-300 bg-white">↩ 上一步</button>
-        <button onClick={redoLast} className="text-[9px] font-bold px-3 py-1.5 rounded-full border border-stone-400 text-stone-600 dark:text-stone-300 bg-white">↪ 下一步</button>
+        <button onClick={undoLast} className="text-[9px] font-bold px-3 py-1.5 rounded-full border border-stone-400 text-stone-600 bg-white">↩ 上一步</button>
+        <button onClick={redoLast} className="text-[9px] font-bold px-3 py-1.5 rounded-full border border-stone-400 text-stone-600 bg-white">↪ 下一步</button>
         {(isAdmin || isMember) && <button onClick={clearBoard} className="text-[9px] font-bold px-3 py-1.5 rounded-full border border-red-300 text-red-500 bg-white">🗑 清空</button>}
       </div>
-      <div className="px-4 py-2 bg-stone-50 border-t border-stone-200 dark:border-white/10 flex items-center gap-3">
+      <div className="px-4 py-2 bg-stone-50 border-t border-stone-200 flex items-center gap-3">
         <span className="text-[8px] font-bold text-stone-400 uppercase tracking-wider">SIZE</span>
         <input type="range" min="2" max="30" value={size} onChange={e => setSize(parseInt(e.target.value))} className="flex-1" />
         <div className="w-6 h-6 flex items-center justify-center">
@@ -661,7 +661,7 @@ const SharedWhiteboard = ({ isAdmin, isMember }) => {
         </div>
       </div>
       {tool === 'text' && (
-        <div className="px-3 py-2.5 bg-blue-50 border-t border-stone-200 dark:border-white/10 flex gap-2 items-center animate-fadeIn">
+        <div className="px-3 py-2.5 bg-blue-50 border-t border-stone-200 flex gap-2 items-center animate-fadeIn">
           <input type="text" value={textInput} onChange={e => setTextInput(e.target.value)} placeholder="輸入文字後點畫布放置..." maxLength={20} className="flex-1 text-xs px-3 py-2 rounded-full border border-stone-300 bg-white outline-none focus:border-amber-400" />
           <span className="text-[9px] text-stone-400 whitespace-nowrap">→ 點畫布</span>
         </div>
@@ -727,15 +727,15 @@ const FreeItinerary = ({ isAdmin, isMember }) => {
             <button onClick={saveEdit} className="flex-1 py-3 rounded-xl font-bold text-white flex items-center justify-center gap-2 active:scale-95" style={{ background: '#E2472A' }}>
               <Save size={16} /> 儲存並同步
             </button>
-            <button onClick={() => setIsEditing(false)} className="px-5 py-3 rounded-xl font-bold text-stone-500 border border-stone-200 dark:border-white/10 bg-white active:scale-95">取消</button>
+            <button onClick={() => setIsEditing(false)} className="px-5 py-3 rounded-xl font-bold text-stone-500 border border-stone-200 bg-white active:scale-95">取消</button>
           </div>
         </div>
       ) : (
-        <div className="bg-white dark:bg-[#1E2142] rounded-2xl border border-stone-100 dark:border-white/10 shadow-sm p-5">
+        <div className="bg-white rounded-2xl border border-stone-100 shadow-sm p-5">
           {!canEdit && (
             <div className="flex items-center gap-1.5 text-[10px] text-stone-400 font-bold mb-3"><Eye size={11} /> 訪客唯讀模式</div>
           )}
-          <p className="text-sm text-stone-700 dark:text-stone-200 leading-[1.9] whitespace-pre-line" style={{ fontFamily: "'Noto Sans TC', sans-serif" }}>{text}</p>
+          <p className="text-sm text-stone-700 leading-[1.9] whitespace-pre-line" style={{ fontFamily: "'Noto Sans TC', sans-serif" }}>{text}</p>
         </div>
       )}
     </div>
@@ -748,7 +748,7 @@ const FreeItinerary = ({ isAdmin, isMember }) => {
 const FlightCard = ({ type, date, flightNo, time, airline, from, to, fromCode, toCode, fromTerminal, toTerminal }) => {
   const searchUrl = `https://www.google.com/search?q=${flightNo}+flight+status`;
   return (
-    <div className="bg-white dark:bg-[#1E2142] rounded-2xl p-4 border border-stone-100 dark:border-white/10 shadow-sm mb-3 relative overflow-hidden">
+    <div className="bg-white rounded-2xl p-4 border border-stone-100 shadow-sm mb-3 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-24 h-24 rounded-bl-full -mr-4 -mt-4 z-0" style={{ background: '#FBF3E4' }}></div>
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-4">
@@ -757,7 +757,7 @@ const FlightCard = ({ type, date, flightNo, time, airline, from, to, fromCode, t
         </div>
         <div className="flex justify-between items-center mb-4">
           <div className="text-center min-w-[3rem]">
-            <div className="text-2xl font-bold text-stone-800 dark:text-stone-100 leading-none mb-1">{from}</div>
+            <div className="text-2xl font-bold text-stone-800 leading-none mb-1">{from}</div>
             <div className="flex flex-col items-center">
               <span className="text-[10px] text-stone-400 font-bold tracking-widest">{fromCode}</span>
               {fromTerminal && <span className="mt-1 text-[10px] font-bold text-white px-1.5 py-0.5 rounded shadow-sm" style={{ background: '#E2472A' }}>{fromTerminal}</span>}
@@ -771,14 +771,14 @@ const FlightCard = ({ type, date, flightNo, time, airline, from, to, fromCode, t
             <div className="text-xs font-bold text-stone-400 mt-2 whitespace-nowrap">{time}</div>
           </div>
           <div className="text-center min-w-[3rem]">
-            <div className="text-2xl font-bold text-stone-800 dark:text-stone-100 leading-none mb-1">{to}</div>
+            <div className="text-2xl font-bold text-stone-800 leading-none mb-1">{to}</div>
             <div className="flex flex-col items-center">
               <span className="text-[10px] text-stone-400 font-bold tracking-widest">{toCode}</span>
               {toTerminal && <span className="mt-1 text-[10px] font-bold text-white px-1.5 py-0.5 rounded shadow-sm" style={{ background: '#4B5563' }}>{toTerminal}</span>}
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-between pt-3 border-t border-stone-100 dark:border-white/10">
+        <div className="flex items-center justify-between pt-3 border-t border-stone-100">
           <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div><span className="text-xs text-stone-500 font-medium">{airline}</span></div>
           <a href={searchUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-xs font-bold text-blue-500 bg-blue-50 px-3 py-1.5 rounded-full">即時動態 <ArrowRight size={12} /></a>
         </div>
@@ -809,7 +809,7 @@ const UTILS_DATA = {
     globalFree: '001-010-800-0885-0885',
   },
   notes: '九月仍是颱風季尾聲，出發前留意颱風動態與班機異動通知。\n住宿鑰匙盒密碼「0708」請勿外流，退房記得放回鑰匙盒鎖好。',
-  driveUrl: 'https://drive.google.com/drive/folders/YOUR_FOLDER_ID',
+  driveUrl: 'https://drive.google.com/drive/folders/1ug9ArdSALUtTHR6zHTY5LeWRjl6B_u-I?usp=sharing',
 };
 
 // ============================================================
@@ -842,14 +842,14 @@ const CurrencySection = () => {
   }, []);
 
   return (
-    <section className="bg-white dark:bg-[#1E2142] p-6 rounded-2xl border border-stone-100 dark:border-white/10 mb-6">
-      <h3 className="flex items-center gap-2 font-bold text-stone-800 dark:text-stone-100 mb-4 border-b pb-3"><Wallet size={18} className="text-green-600" /> 匯率換算</h3>
+    <section className="bg-white p-6 rounded-2xl border border-stone-100 mb-6">
+      <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Wallet size={18} className="text-green-600" /> 匯率換算</h3>
       <div className="bg-green-50 p-4 rounded-xl">
         <div className="text-[10px] text-green-600 font-bold mb-2 flex justify-between"><span>即時基準：1 TWD ≈ {rate} JPY</span><span>{lastUpdate}</span></div>
         <div className="flex items-center gap-2">
-          <input type="number" value={twd} onChange={(e) => { setTwd(e.target.value); setJpy(e.target.value ? (parseFloat(e.target.value) * rate).toFixed(0) : ''); }} placeholder="台幣" className="w-full p-2 rounded-lg border border-green-200 outline-none focus:border-green-500 font-bold text-stone-700 dark:text-stone-200" />
+          <input type="number" value={twd} onChange={(e) => { setTwd(e.target.value); setJpy(e.target.value ? (parseFloat(e.target.value) * rate).toFixed(0) : ''); }} placeholder="台幣" className="w-full p-2 rounded-lg border border-green-200 outline-none focus:border-green-500 font-bold text-stone-700" />
           <span className="text-stone-400 font-bold">=</span>
-          <input type="number" value={jpy} onChange={(e) => { setJpy(e.target.value); setTwd(e.target.value ? (parseFloat(e.target.value) / rate).toFixed(1) : ''); }} placeholder="日幣" className="w-full p-2 rounded-lg border border-green-200 outline-none focus:border-green-500 font-bold text-stone-700 dark:text-stone-200" />
+          <input type="number" value={jpy} onChange={(e) => { setJpy(e.target.value); setTwd(e.target.value ? (parseFloat(e.target.value) / rate).toFixed(1) : ''); }} placeholder="日幣" className="w-full p-2 rounded-lg border border-green-200 outline-none focus:border-green-500 font-bold text-stone-700" />
         </div>
       </div>
     </section>
@@ -882,7 +882,7 @@ const ReservationAdminSection = ({ reservations, saveList }) => {
   };
 
   return (
-    <div className="p-4 border-t border-stone-100 dark:border-white/10 bg-blue-50 space-y-2">
+    <div className="p-4 border-t border-stone-100 bg-blue-50 space-y-2">
       <div className="text-[10px] font-bold text-blue-700 uppercase tracking-wider mb-2">管理員新增預約</div>
       <input value={newName} onChange={e => setNewName(e.target.value)} placeholder="店名" className="w-full p-2 border rounded-lg text-xs bg-white" />
       <div className="grid grid-cols-2 gap-2">
@@ -911,13 +911,13 @@ const TokyoTips = ({ isMember }) => {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <div className="mx-6 mt-6 mb-6">
-      <div className="bg-white dark:bg-[#1E2142] rounded-2xl border overflow-hidden shadow-sm" style={{ borderColor: '#F2C879' }}>
+      <div className="bg-white rounded-2xl border overflow-hidden shadow-sm" style={{ borderColor: '#F2C879' }}>
         <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-4 font-bold transition-colors" style={{ background: '#FBF3E4', color: '#8A5A1E' }}>
           <div className="flex items-center gap-2"><AlertCircle size={18} style={{ color: '#C97A1E' }} /><span>2026 東京行前提醒</span></div>
           {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </button>
         {isOpen && (
-          <div className="p-4 space-y-4 text-sm text-stone-700 dark:text-stone-200 leading-relaxed" style={{ background: '#FBF3E4' }}>
+          <div className="p-4 space-y-4 text-sm text-stone-700 leading-relaxed" style={{ background: '#FBF3E4' }}>
             <div className="flex gap-3">
               <div className="min-w-[24px] text-amber-600 font-bold mt-1"><AlertTriangle size={18} /></div>
               <div>
@@ -1013,13 +1013,13 @@ const PackingPage = ({ isAdmin, isMember }) => {
   };
 
   return (
-    <div className="pb-24 min-h-screen bg-[#FAF7F0] dark:bg-[#14162B] relative">
+    <div className="pb-24 min-h-screen bg-[#FAF7F0] relative">
       <TokyoTips isMember={isMember} />
       <div className="mx-6 mt-6">
-        <a href="https://vjw-lp.digital.go.jp/zh-hant/" target="_blank" rel="noreferrer" className="bg-white dark:bg-[#1E2142] shadow-sm border border-stone-100 dark:border-white/10 py-4 px-4 rounded-2xl flex items-center justify-between gap-2 text-stone-600 dark:text-stone-300 w-full active:scale-95 transition-transform">
+        <a href="https://vjw-lp.digital.go.jp/zh-hant/" target="_blank" rel="noreferrer" className="bg-white shadow-sm border border-stone-100 py-4 px-4 rounded-2xl flex items-center justify-between gap-2 text-stone-600 w-full active:scale-95 transition-transform">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-50 rounded-xl"><FileText size={20} className="text-blue-500" /></div>
-            <div><div className="font-bold text-sm text-stone-800 dark:text-stone-100">Visit Japan Web</div><div className="text-[10px] text-stone-400 mt-0.5">入境申報 / 免稅 / 簽證</div></div>
+            <div><div className="font-bold text-sm text-stone-800">Visit Japan Web</div><div className="text-[10px] text-stone-400 mt-0.5">入境申報 / 免稅 / 簽證</div></div>
           </div>
           <ArrowRight size={16} className="text-stone-400" />
         </a>
@@ -1058,15 +1058,15 @@ const PackingPage = ({ isAdmin, isMember }) => {
           <div className="h-1.5 w-full bg-stone-200 rounded-full mb-6 overflow-hidden"><div className="h-full transition-all duration-500" style={{ width: `${getProgress(currentUser)}%`, background: 'linear-gradient(90deg,#4BACD6,#6FA84B)' }} /></div>
           {(isAdmin || isMember) && (
             <div className="mb-6 flex gap-2">
-              <input type="text" value={newItem} onChange={(e) => setNewItem(e.target.value)} placeholder="自訂行李項目..." className="flex-1 p-3 rounded-xl border border-stone-200 dark:border-white/10 focus:outline-none focus:border-amber-500 bg-white shadow-sm placeholder:text-stone-400" onKeyPress={(e) => e.key === 'Enter' && addItem()} />
+              <input type="text" value={newItem} onChange={(e) => setNewItem(e.target.value)} placeholder="自訂行李項目..." className="flex-1 p-3 rounded-xl border border-stone-200 focus:outline-none focus:border-amber-500 bg-white shadow-sm placeholder:text-stone-400" onKeyPress={(e) => e.key === 'Enter' && addItem()} />
               <button onClick={addItem} className="text-white px-5 rounded-xl font-bold" style={{ background: '#1B1F3B' }}>+</button>
             </div>
           )}
           <div className="space-y-3">
             {packingData[currentUser]?.map((item, idx) => (
-              <div key={idx} onClick={() => toggleItem(currentUser, idx)} className={`flex items-center gap-3 p-4 rounded-xl border transition-all cursor-pointer ${item.checked ? 'bg-stone-100 border-transparent opacity-60' : 'bg-white border-stone-100 dark:border-white/10 shadow-sm hover:shadow-md'}`}>
+              <div key={idx} onClick={() => toggleItem(currentUser, idx)} className={`flex items-center gap-3 p-4 rounded-xl border transition-all cursor-pointer ${item.checked ? 'bg-stone-100 border-transparent opacity-60' : 'bg-white border-stone-100 shadow-sm hover:shadow-md'}`}>
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center border-2 transition-colors flex-shrink-0 ${item.checked ? 'text-white' : 'border-stone-300 bg-stone-50'}`} style={item.checked ? { background: '#6FA84B', borderColor: '#6FA84B' } : {}}>{item.checked && <CheckCircle size={14} />}</div>
-                <span className={`flex-1 font-medium ${item.checked ? 'text-stone-400 line-through' : 'text-stone-700 dark:text-stone-200'}`}>{item.name}</span>
+                <span className={`flex-1 font-medium ${item.checked ? 'text-stone-400 line-through' : 'text-stone-700'}`}>{item.name}</span>
                 {(isAdmin || isMember) && <button onClick={(e) => { e.stopPropagation(); deleteItem(idx); }} className="text-stone-300 hover:text-red-400">×</button>}
               </div>
             ))}
@@ -1160,12 +1160,12 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
   return (
     <div className="p-6 space-y-6 pb-24 animate-fadeIn">
       <section>
-        <div className="bg-white dark:bg-[#1E2142] border rounded-[2rem] p-5 shadow-sm" style={{ borderColor: '#F2C879' }}>
+        <div className="bg-white border rounded-[2rem] p-5 shadow-sm" style={{ borderColor: '#F2C879' }}>
           <div className="flex items-center gap-2 mb-3 font-bold text-xs uppercase tracking-widest" style={{ color: '#C97A1E' }}><Info size={14} /> 團隊重要通知公佈欄</div>
           {isAdmin ? (
             <textarea value={noticeText} onChange={(e) => updateNoticeText(e.target.value)} className="w-full rounded-2xl p-3 text-sm min-h-[100px] outline-none" style={{ background: '#FBF3E4' }} />
           ) : (
-            <div className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed whitespace-pre-line italic px-1">{noticeText}</div>
+            <div className="text-sm text-stone-600 leading-relaxed whitespace-pre-line italic px-1">{noticeText}</div>
           )}
         </div>
       </section>
@@ -1181,7 +1181,7 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
           <div className="mt-3 bg-white rounded-3xl border border-rose-100 overflow-hidden divide-y">
             {pickyItems.map((item, i) => (
               <div key={i} className="px-5 py-4 flex justify-between items-center">
-                <span className="font-bold text-stone-800 dark:text-stone-100">{item.zh}</span>
+                <span className="font-bold text-stone-800">{item.zh}</span>
                 <span className="text-base font-black text-rose-600" style={{ fontFamily: "'Noto Serif TC', serif" }}>{item.th}</span>
               </div>
             ))}
@@ -1210,31 +1210,31 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
           </button>
           {showReservations && (
             <div className="mt-3 bg-white rounded-3xl border border-blue-100 overflow-hidden">
-              <div className="divide-y divide-stone-100 dark:divide-white/10">
+              <div className="divide-y divide-stone-100">
                 {reservations.map((res, i) => (
                   <div key={i} className="px-5 py-4">
                     {editingRes === i ? (
                       <div className="space-y-2 animate-fadeIn">
-                        <input value={editDraft.name} onChange={(e) => setEditDraft({ ...editDraft, name: e.target.value })} placeholder="店名" className="w-full p-2 border rounded-lg text-sm bg-white dark:bg-[#1E2142] dark:border-white/10" />
+                        <input value={editDraft.name} onChange={(e) => setEditDraft({ ...editDraft, name: e.target.value })} placeholder="店名" className="w-full p-2 border rounded-lg text-sm bg-white" />
                         <div className="grid grid-cols-2 gap-2">
-                          <input value={editDraft.date} onChange={(e) => setEditDraft({ ...editDraft, date: e.target.value })} placeholder="日期 (9/25)" className="p-2 border rounded-lg text-xs bg-white dark:bg-[#1E2142] dark:border-white/10" />
-                          <input value={editDraft.time} onChange={(e) => setEditDraft({ ...editDraft, time: e.target.value })} placeholder="時間 (21:00)" className="p-2 border rounded-lg text-xs bg-white dark:bg-[#1E2142] dark:border-white/10" />
+                          <input value={editDraft.date} onChange={(e) => setEditDraft({ ...editDraft, date: e.target.value })} placeholder="日期 (9/25)" className="p-2 border rounded-lg text-xs bg-white" />
+                          <input value={editDraft.time} onChange={(e) => setEditDraft({ ...editDraft, time: e.target.value })} placeholder="時間 (21:00)" className="p-2 border rounded-lg text-xs bg-white" />
                         </div>
-                        <input value={editDraft.note} onChange={(e) => setEditDraft({ ...editDraft, note: e.target.value })} placeholder="備註（預約號碼等）" className="w-full p-2 border rounded-lg text-xs bg-white dark:bg-[#1E2142] dark:border-white/10" />
-                        <input value={editDraft.ticketUrl || ''} onChange={(e) => setEditDraft({ ...editDraft, ticketUrl: e.target.value })} placeholder="票券連結（選填）" className="w-full p-2 border rounded-lg text-xs bg-white dark:bg-[#1E2142] dark:border-white/10" />
-                        <select value={editDraft.status || 'confirmed'} onChange={(e) => setEditDraft({ ...editDraft, status: e.target.value })} className="w-full p-2 border rounded-lg text-xs bg-white dark:bg-[#1E2142] dark:border-white/10">
+                        <input value={editDraft.note} onChange={(e) => setEditDraft({ ...editDraft, note: e.target.value })} placeholder="備註（預約號碼等）" className="w-full p-2 border rounded-lg text-xs bg-white" />
+                        <input value={editDraft.ticketUrl || ''} onChange={(e) => setEditDraft({ ...editDraft, ticketUrl: e.target.value })} placeholder="票券連結（選填）" className="w-full p-2 border rounded-lg text-xs bg-white" />
+                        <select value={editDraft.status || 'confirmed'} onChange={(e) => setEditDraft({ ...editDraft, status: e.target.value })} className="w-full p-2 border rounded-lg text-xs bg-white">
                           <option value="confirmed">已訂</option>
                           <option value="pending">待訂</option>
                         </select>
                         <div className="flex gap-2">
                           <button onClick={saveEditRes} className="flex-1 py-2 rounded-lg text-white text-xs font-bold" style={{ background: '#1B1F3B' }}>儲存</button>
-                          <button onClick={cancelEditRes} className="flex-1 py-2 rounded-lg border border-stone-200 dark:border-white/10 text-xs font-bold text-stone-500">取消</button>
+                          <button onClick={cancelEditRes} className="flex-1 py-2 rounded-lg border border-stone-200 text-xs font-bold text-stone-500">取消</button>
                         </div>
                       </div>
                     ) : (
                       <>
                         <div className="flex justify-between items-start mb-1 gap-2">
-                          <span className="font-bold text-stone-800 dark:text-stone-100 text-sm">{res.name}</span>
+                          <span className="font-bold text-stone-800 text-sm">{res.name}</span>
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${res.status === 'pending' ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'}`}>{res.status === 'pending' ? '待訂' : '已訂'} · {res.date}</span>
                         </div>
                         <div className="flex items-center gap-2 text-xs text-stone-500"><Clock size={11} /> {res.time} ・ {res.note}</div>
@@ -1243,8 +1243,8 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
                         )}
                         {isAdmin && (
                           <div className="flex items-center gap-1.5 mt-2">
-                            <button onClick={() => moveRes(i, -1)} disabled={i === 0} className="p-1.5 rounded-lg bg-stone-100 dark:bg-white/10 text-stone-500 dark:text-stone-300 disabled:opacity-30 text-xs">⬆️</button>
-                            <button onClick={() => moveRes(i, 1)} disabled={i === reservations.length - 1} className="p-1.5 rounded-lg bg-stone-100 dark:bg-white/10 text-stone-500 dark:text-stone-300 disabled:opacity-30 text-xs">⬇️</button>
+                            <button onClick={() => moveRes(i, -1)} disabled={i === 0} className="p-1.5 rounded-lg bg-stone-100 text-stone-500 disabled:opacity-30 text-xs">⬆️</button>
+                            <button onClick={() => moveRes(i, 1)} disabled={i === reservations.length - 1} className="p-1.5 rounded-lg bg-stone-100 text-stone-500 disabled:opacity-30 text-xs">⬇️</button>
                             <button onClick={() => startEditRes(i)} className="px-2.5 py-1.5 rounded-lg bg-blue-50 text-blue-600 text-[11px] font-bold">✏️ 編輯</button>
                             <button onClick={() => deleteRes(i)} className="px-2.5 py-1.5 rounded-lg bg-red-50 text-red-500 text-[11px] font-bold">🗑️ 刪除</button>
                           </div>
@@ -1265,12 +1265,12 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
           <div key={idx} className={`p-5 rounded-[2rem] border ${section.color} shadow-sm`}>
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2.5 bg-white rounded-2xl shadow-sm">{section.icon}</div>
-              <h3 className="text-lg font-bold text-stone-800 dark:text-stone-100">{section.title}</h3>
+              <h3 className="text-lg font-bold text-stone-800">{section.title}</h3>
             </div>
             <p className="text-[11px] text-stone-500 mb-5">{section.desc}</p>
             <div className="grid grid-cols-2 gap-3">
               <button onClick={() => window.open(section.mapUrl, '_blank')} className="flex items-center justify-center gap-2 py-2.5 text-white rounded-2xl text-xs font-bold shadow-md active:scale-95" style={{ background: '#1B1F3B' }}><MapPin size={14} /> 開啟地圖</button>
-              <button onClick={() => window.open(`https://www.perplexity.ai/search?q=${encodeURIComponent('東京 ' + section.aiQuery)}`, '_blank')} className="flex items-center justify-center gap-2 py-2.5 border rounded-2xl text-xs font-bold shadow-sm active:scale-95 bg-white border-stone-200 dark:border-white/10 text-stone-700 dark:text-stone-200"><Sparkles size={14} className="text-teal-500" /> 問問 AI</button>
+              <button onClick={() => window.open(`https://www.perplexity.ai/search?q=${encodeURIComponent('東京 ' + section.aiQuery)}`, '_blank')} className="flex items-center justify-center gap-2 py-2.5 border rounded-2xl text-xs font-bold shadow-sm active:scale-95 bg-white border-stone-200 text-stone-700"><Sparkles size={14} className="text-teal-500" /> 問問 AI</button>
             </div>
           </div>
         ))}
@@ -1281,7 +1281,7 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
         <div className="space-y-4 mb-6">
           {sharedStores.length === 0 && <div className="text-xs text-stone-400 text-center py-4">目前還沒有人新增願望喔！</div>}
           {sharedStores.map((store, i) => (
-            <div key={i} className="bg-white dark:bg-[#1E2142] p-4 rounded-2xl border flex justify-between">
+            <div key={i} className="bg-white p-4 rounded-2xl border flex justify-between">
               <div>
                 <div className="font-bold text-base">{store.name}</div>
                 {store.note && <div className="text-xs text-stone-500">💬 {store.note}</div>}
@@ -1293,7 +1293,7 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
         </div>
         {(isAdmin || isMember) && (
           <div className="space-y-2">
-            <select value={adderName} onChange={(e) => setAdderName(e.target.value)} className="w-full p-2 rounded-xl text-xs font-bold border border-amber-200 bg-white text-stone-800 dark:text-stone-100">
+            <select value={adderName} onChange={(e) => setAdderName(e.target.value)} className="w-full p-2 rounded-xl text-xs font-bold border border-amber-200 bg-white text-stone-800">
               {USERS.map(name => <option key={name} value={name}>{name}</option>)}
             </select>
             <input value={newStoreName} onChange={(e) => setNewStoreName(e.target.value)} placeholder="店家名稱" className="w-full p-2 border rounded-xl text-sm bg-white placeholder:text-stone-400" />
@@ -1318,8 +1318,8 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
   };
 
   const appRow = (name, desc, iosUrl, androidUrl) => (
-    <div className="flex items-center justify-between p-3 bg-stone-50 dark:bg-white/5 rounded-xl border border-stone-100 dark:border-white/10">
-      <div><div className="font-bold text-stone-800 dark:text-stone-100 text-sm">{name}</div><div className="text-[10px] text-stone-500">{desc}</div></div>
+    <div className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100">
+      <div><div className="font-bold text-stone-800 text-sm">{name}</div><div className="text-[10px] text-stone-500">{desc}</div></div>
       <div className="flex gap-2">
         {iosUrl && <a href={iosUrl} target="_blank" rel="noreferrer" className="text-[10px] font-bold text-white px-2 py-1 rounded-lg" style={{ background: '#1B1F3B' }}>iOS</a>}
         {androidUrl && <a href={androidUrl} target="_blank" rel="noreferrer" className="text-[10px] font-bold text-white px-2 py-1 rounded-lg" style={{ background: '#1B1F3B' }}>Android</a>}
@@ -1328,7 +1328,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
   );
 
   return (
-    <div className="p-6 space-y-6 pb-24 bg-[#FAF7F0] dark:bg-[#14162B] transition-colors">
+    <div className="p-6 space-y-6 pb-24 bg-[#FAF7F0] transition-colors">
       <h2 className="text-2xl tracking-tight" style={{ color: '#1B1F3B', fontFamily: "'Noto Serif TC', serif" }}>實用工具及資訊</h2>
 
       {isAdmin && (
@@ -1349,9 +1349,10 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
         </section>
       )}
 
-      <section className="bg-white dark:bg-[#1E2142] p-6 rounded-2xl border border-stone-100 dark:border-white/10">
-        <h3 className="flex items-center gap-2 font-bold text-stone-800 dark:text-stone-100 mb-4 border-b pb-3"><Plane size={18} className="text-blue-500" /> 航班詳細資訊</h3>
+      <section className="bg-white p-6 rounded-2xl border border-stone-100">
+        <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Plane size={18} className="text-blue-500" /> 航班詳細資訊</h3>
         {UTILS_DATA.flights.map((f, i) => <FlightCard key={i} {...f} />)}
+
         {isMember && (
           <a href={UTILS_DATA.driveUrl} target="_blank" rel="noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 mt-4 rounded-xl font-bold active:scale-95 transition-all"
@@ -1360,26 +1361,29 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
             <Info size={16} /> 開啟電子機票 / 各種憑證
           </a>
         )}
+
+
+
       </section>
 
-      <section className="bg-white dark:bg-[#1E2142] p-6 rounded-2xl border border-stone-100 dark:border-white/10">
-        <h3 className="flex items-center gap-2 font-bold text-stone-800 dark:text-stone-100 mb-4 border-b pb-3"><Home size={18} className="text-orange-500" /> 住宿資訊</h3>
+      <section className="bg-white p-6 rounded-2xl border border-stone-100">
+        <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Home size={18} className="text-orange-500" /> 住宿資訊</h3>
         {isMember ? (
           <div className="rounded-xl p-4 border relative" style={{ background: '#FBF3E4', borderColor: '#F2C879' }}>
             <div className="flex justify-between items-start mb-2">
               <div><span className="text-[10px] text-stone-400 font-bold">Airbnb</span><h4 className="font-bold text-base">{UTILS_DATA.accommodation.name}</h4></div>
-              <span className="text-xs font-bold bg-white px-2 py-1 rounded border border-stone-200 dark:border-white/10 whitespace-nowrap">{UTILS_DATA.accommodation.dates}</span>
+              <span className="text-xs font-bold bg-white px-2 py-1 rounded border border-stone-200 whitespace-nowrap">{UTILS_DATA.accommodation.dates}</span>
             </div>
             <p className="text-xs text-stone-500 mb-1"><MapPin size={10} className="inline mr-1" />{UTILS_DATA.accommodation.address}</p>
             <p className="text-xs text-stone-500 mb-3"><Train size={10} className="inline mr-1" />{UTILS_DATA.accommodation.station}</p>
             <div className="flex items-start gap-2 bg-white rounded-lg p-3 border border-rose-100 mb-4">
               <KeyRound size={14} className="text-rose-500 mt-0.5 flex-shrink-0" />
-              <p className="text-xs text-stone-600 dark:text-stone-300 font-medium">{UTILS_DATA.accommodation.keyNote}</p>
+              <p className="text-xs text-stone-600 font-medium">{UTILS_DATA.accommodation.keyNote}</p>
             </div>
             <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(UTILS_DATA.accommodation.mapQuery)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1.5 py-2.5 text-white rounded-lg text-xs font-bold" style={{ background: '#1B1F3B' }}><Navigation size={14} /> 導航到住宿</a>
           </div>
         ) : (
-          <div className="rounded-xl p-5 border border-stone-100 dark:border-white/10 bg-stone-50 flex items-center gap-3">
+          <div className="rounded-xl p-5 border border-stone-100 bg-stone-50 flex items-center gap-3">
             <Lock size={16} className="text-stone-300 flex-shrink-0" />
             <p className="text-xs text-stone-400 font-medium">住宿地址與鑰匙盒密碼僅團員可見。</p>
           </div>
@@ -1387,17 +1391,17 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
       </section>
 
       {isMember && (
-        <section className="bg-white dark:bg-[#1E2142] p-6 rounded-2xl border border-stone-100 dark:border-white/10 mb-6">
-          <h3 className="flex items-center gap-2 font-bold text-stone-800 dark:text-stone-100 mb-4 border-b pb-3"><Smartphone size={18} className="text-purple-500" /> 旅行必備 App</h3>
+        <section className="bg-white p-6 rounded-2xl border border-stone-100 mb-6">
+          <h3 className="flex items-center gap-2 font-bold text-stone-800 mb-4 border-b pb-3"><Smartphone size={18} className="text-purple-500" /> 旅行必備 App</h3>
           <div className="space-y-3">
-            <a href="https://studio--studio-9206745680-de144.us-central1.hosted.app" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 dark:bg-white/5 rounded-xl border border-stone-100 dark:border-white/10 active:scale-95 transition-all">
-              <div><div className="font-bold text-stone-800 dark:text-stone-100 text-sm">DIGEST 菜單翻譯</div><div className="text-[10px] text-stone-500">拍照即時翻譯日文菜單</div></div>
+            <a href="https://studio--studio-9206745680-de144.us-central1.hosted.app" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100 active:scale-95 transition-all">
+              <div><div className="font-bold text-stone-800 text-sm">DIGEST 菜單翻譯</div><div className="text-[10px] text-stone-500">拍照即時翻譯日文菜單</div></div>
               <ArrowRight size={16} className="text-stone-400" />
             </a>
             {appRow('ロケスマ (ROKESUMA)', '專門用來在日本快速尋找各種連鎖店、超商、超市、咖啡廳、加油站及公共設施的地圖查詢工具。', 'https://apps.apple.com/tw/app/%E3%83%AD%E3%82%B1%E3%82%B9%E3%83%9E/id498923187', 'https://play.google.com/store/apps/details?id=jp.d_advantage.locasma&hl=zh_TW')}
             {appRow('東京地鐵JR巴士規劃軟體', '地鐵路線圖、轉乘搜尋、票價查詢', 'https://apps.apple.com/tw/app/japan-transit-planner-travel/id299490481', 'https://play.google.com/store/apps/details?id=jp.co.jorudan.nrkj')}
-            <a href="https://static.japan.travel.navitime.com/web/walk/contents/html/boot/market.html?utm_source=safetytips&utm_medium=web&utm_campaign=safetytips" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 dark:bg-white/5 rounded-xl border border-stone-100 dark:border-white/10 active:scale-95 transition-all">
-              <div><div className="font-bold text-stone-800 dark:text-stone-100 text-sm">Japan Travel by Navitime</div><div className="text-[10px] text-stone-500">離線地圖・交通路線・景點導覽</div></div>
+            <a href="https://static.japan.travel.navitime.com/web/walk/contents/html/boot/market.html?utm_source=safetytips&utm_medium=web&utm_campaign=safetytips" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100 active:scale-95 transition-all">
+              <div><div className="font-bold text-stone-800 text-sm">Japan Travel by Navitime</div><div className="text-[10px] text-stone-500">離線地圖・交通路線・景點導覽</div></div>
               <ArrowRight size={16} className="text-stone-400" />
             </a>
             {appRow('ecbo cloak 行李寄放', '找附近寄放行李的店家', 'https://apps.apple.com/tw/app/ecbo-cloak-%E6%97%A5%E6%9C%AC%E5%AF%84%E7%89%A9%E6%9C%8D%E5%8B%99/id1443707795', 'https://play.google.com/store/apps/details?id=io.ecbo.cloak&pcampaignid=web_share')}
@@ -1407,8 +1411,8 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
             {appRow('GO 日本計程車', '日本最大計程車叫車 App・支援信用卡', 'https://apps.apple.com/us/app/go-taxi-app-for-japan/id1254341709', 'https://play.google.com/store/apps/details?id=com.dena.automotive.taxibell')}
             {appRow('Tabelog 食べログ', '日本最大餐廳評分・在地口碑查詢', 'https://apps.apple.com/tw/app/tabelog-%E6%97%A5%E6%9C%AC%E9%A4%90%E5%BB%B3%E6%8E%A2%E7%B4%A2-%E8%A8%82%E4%BD%8D%E8%88%87%E8%A9%95%E5%83%B9%E5%85%A8%E6%96%B9%E4%BD%8D%E5%B9%B3%E5%8F%B0/id6752922875', 'https://play.google.com/store/apps/details?id=com.kakaku.tabelog.tourists&hl=zh_TW')}
             {appRow('Payke', '掃條碼查日本商品成分・免稅優惠券', 'https://apps.apple.com/tw/app/payke-%E4%BD%BF%E7%94%A8%E5%84%AA%E6%83%A0%E5%88%B8-%E8%AE%93%E6%97%A5%E6%9C%AC%E6%97%85%E8%A1%8C%E6%9B%B4%E5%88%92%E7%AE%97-%E7%BF%BB%E8%AD%AF-%E8%A9%95%E5%83%B9/id1040452788', 'https://play.google.com/store/apps/details?id=jp.co.payke.Payke1')}
-            <a href="https://linshibi.com/" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 dark:bg-white/5 rounded-xl border border-stone-100 dark:border-white/10 active:scale-95 transition-all">
-              <div><div className="font-bold text-stone-800 dark:text-stone-100 text-sm">林氏壁情報站</div><div className="text-[10px] text-stone-500">日本旅遊資訊・攻略・必買推薦懶人包</div></div>
+            <a href="https://linshibi.com/" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100 active:scale-95 transition-all">
+              <div><div className="font-bold text-stone-800 text-sm">林氏壁情報站</div><div className="text-[10px] text-stone-500">日本旅遊資訊・攻略・必買推薦懶人包</div></div>
               <ArrowRight size={16} className="text-stone-400" />
             </a>
           </div>
@@ -1433,7 +1437,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
 
   
 {/* eSIM 防爆流量區塊 */}
-  <section className="mt-3 bg-white dark:bg-stone-800 p-6 rounded-2xl border border-stone-100 dark:border-white/10 dark:border-stone-700 mb-6">
+  <section className="mt-3 bg-white dark:bg-stone-800 p-6 rounded-2xl border border-stone-100 dark:border-stone-700 mb-6">
 
     
   <button
@@ -1469,7 +1473,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
         <img
           src={process.env.PUBLIC_URL + '/images/esim_ios.jpg'}
           alt="iOS eSIM 防爆流量設定"
-          className="w-full rounded-2xl border border-stone-100 dark:border-white/10 dark:border-stone-700 shadow-sm"
+          className="w-full rounded-2xl border border-stone-100 dark:border-stone-700 shadow-sm"
         />
       </div>
 
@@ -1481,7 +1485,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
         <img
           src={process.env.PUBLIC_URL + '/images/esim_android.jpg'}
           alt="Android eSIM 防爆流量設定"
-          className="w-full rounded-2xl border border-stone-100 dark:border-white/10 dark:border-stone-700 shadow-sm"
+          className="w-full rounded-2xl border border-stone-100 dark:border-stone-700 shadow-sm"
         />
       </div>
     </div>
@@ -1493,7 +1497,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
         </section>
       )}
 
-      <section className="bg-white dark:bg-[#1E2142] p-6 rounded-2xl border border-stone-100 dark:border-white/10 mb-6">
+      <section className="bg-white p-6 rounded-2xl border border-stone-100 mb-6">
         <h3 className="flex items-center gap-2 font-bold text-red-700 mb-4 border-b pb-3"><AlertCircle size={18} className="text-red-600" /> 緊急救援中心</h3>
         <div className="space-y-6">
           <div className="grid grid-cols-2 gap-3">
@@ -1508,7 +1512,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
                 <div className="text-xs font-bold text-stone-100">下載 Japan Safety Tips</div>
                 <div className="text-[9px] text-stone-400 mt-0.5">地震海嘯警報・多國語言緊急通知</div>
               </div>
-              <ArrowRight size={14} className="text-stone-600 dark:text-stone-300 group-hover:text-amber-500" />
+              <ArrowRight size={14} className="text-stone-600 group-hover:text-amber-500" />
             </div>
             <div className="space-y-3">
               <div className="border-b border-white/10 pb-2">
@@ -1563,7 +1567,6 @@ export default function TravelApp() {
   const [appVersion, setAppVersion] = useState('V1 自由行版');
   const [systemInfo, setSystemInfo] = useState('System Ver. 1.0 東京自由行 🗼');
   const [noticeText, setNoticeText] = useState('載入中...');
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const savedRole = localStorage.getItem('tokyo2026_role');
@@ -1609,7 +1612,7 @@ export default function TravelApp() {
   };
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
         * { font-family: 'Noto Sans TC', sans-serif; }
@@ -1617,14 +1620,14 @@ export default function TravelApp() {
         .no-scrollbar { scrollbar-width: none; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fadeIn { animation: fadeIn 0.3s ease forwards; }
-        body, #root { background-color: ${darkMode ? '#14162B' : '#FAF7F0'}; }
+        body, #root { background-color: #FAF7F0; }
         @media print {
           #main-app-container { display: none !important; }
           #print-zone { display: block !important; background: white !important; }
         }
       `}</style>
 
-      <div className="min-h-screen font-sans text-stone-800 dark:text-stone-100 max-w-md mx-auto relative overflow-hidden bg-[#FAF7F0] dark:bg-[#14162B]">
+      <div className="min-h-screen font-sans text-stone-800 max-w-md mx-auto relative overflow-hidden bg-[#FAF7F0]">
         <div className="fixed inset-0 z-[9999] bg-stone-900 text-white flex-col items-center justify-center hidden landscape:flex"><Phone size={48} className="animate-pulse mb-4" /><p className="text-lg font-bold">請將手機轉為直向</p></div>
 
         {isLocked && (
@@ -1678,12 +1681,12 @@ export default function TravelApp() {
         {!isLocked && (
           <>
             {isLoadingData ? (
-              <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAF7F0] dark:bg-[#14162B]">
+              <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FAF7F0]">
                 <Loader2 size={48} className="animate-spin mb-4" style={{ color: '#E2472A' }} />
                 <p className="text-stone-500 text-sm font-bold tracking-widest animate-pulse">正在同步雲端行程...</p>
               </div>
             ) : (
-              <div id="main-app-container" className="bg-[#FAF7F0] dark:bg-[#14162B] min-h-screen">
+              <div id="main-app-container" className="bg-[#FAF7F0] min-h-screen">
                 <WeatherHero isAdmin={isAdmin} onLock={() => { setIsLocked(true); setIsUnlocking(false); setInputPwd(''); setIsAdmin(false); setIsMember(false); localStorage.removeItem('tokyo2026_unlocked'); localStorage.removeItem('tokyo2026_role'); }} />
                 <main className="pb-28">
                   {activeTab === 'itinerary' && (
@@ -1692,32 +1695,17 @@ export default function TravelApp() {
                       <FreeItinerary isAdmin={isAdmin} isMember={isMember} />
                       <div className="text-center text-xs text-stone-400 mt-4 mb-4 italic" style={{ fontFamily: "'Noto Serif TC', serif" }}>— Journey to Tokyo —</div>
                       <div className="flex justify-center mb-8">
-                        <button onClick={() => window.print()} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-stone-200 dark:border-white/10 text-[10px] font-bold text-stone-400 shadow-sm bg-white"><FileText size={10} /> 匯出 PDF</button>
+                        <button onClick={() => window.print()} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-stone-200 text-[10px] font-bold text-stone-400 shadow-sm bg-white"><FileText size={10} /> 匯出 PDF</button>
                       </div>
                     </div>
                   )}
                   {activeTab === 'packing' && <PackingPage isAdmin={isAdmin} isMember={isMember} />}
                   {activeTab === 'guide' && <GuidePage isAdmin={isAdmin} isMember={isMember} noticeText={noticeText} updateNoticeText={handleUpdateNotice} />}
-                  {activeTab === 'utils' && (
-                    <div>
-                      <div className="px-6 pt-6">
-                        <div className="flex items-center justify-between bg-white dark:bg-[#1E2142] p-4 rounded-2xl border border-stone-100 dark:border-white/10">
-                          <div className="flex items-center gap-2 font-bold text-stone-800 dark:text-stone-100">
-                            {darkMode ? <Sun size={18} className="text-amber-400" /> : <CloudRain size={18} className="text-stone-400" />}
-                            <span>{darkMode ? '深色模式 (On)' : '淺色模式 (Off)'}</span>
-                          </div>
-                          <button onClick={() => setDarkMode(!darkMode)} className={`w-12 h-6 rounded-full p-1 transition-colors`} style={{ background: darkMode ? '#E2472A' : '#D6D0C0' }}>
-                            <div className={`w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${darkMode ? 'translate-x-6' : 'translate-x-0'}`} />
-                          </button>
-                        </div>
-                      </div>
-                      <UtilsPage isAdmin={isAdmin} isMember={isMember} systemInfo={systemInfo} updateSystemInfo={updateSystemInfo} />
-                    </div>
-                  )}
+                  {activeTab === 'utils' && <UtilsPage isAdmin={isAdmin} isMember={isMember} systemInfo={systemInfo} updateSystemInfo={updateSystemInfo} />}
                 </main>
                 <BackToTop />
 
-                <nav className="fixed bottom-0 w-full max-w-md bg-white/95 dark:bg-[#1E2142]/95 backdrop-blur-lg border-t border-stone-100 dark:border-white/10 flex justify-around py-3 pb-4 z-40 select-none">
+                <nav className="fixed bottom-0 w-full max-w-md bg-white/95 backdrop-blur-lg border-t flex justify-around py-3 pb-4 z-40 select-none" style={{ borderColor: '#EFE9DA' }}>
                   <button onClick={() => setActiveTab('itinerary')} className="flex flex-col items-center gap-1.5" style={{ color: activeTab === 'itinerary' ? '#1B1F3B' : '#B8AF9C' }}><MapPin size={20} /><span className="text-[10px] font-bold">行程</span></button>
                   <button onClick={() => setActiveTab('packing')} className="flex flex-col items-center gap-1.5" style={{ color: activeTab === 'packing' ? '#1B1F3B' : '#B8AF9C' }}><CheckCircle size={20} /><span className="text-[10px] font-bold">準備</span></button>
                   <button onClick={() => setActiveTab('guide')} className="flex flex-col items-center gap-1.5" style={{ color: activeTab === 'guide' ? '#1B1F3B' : '#B8AF9C' }}><Compass size={20} /><span className="text-[10px] font-bold">指南</span></button>
