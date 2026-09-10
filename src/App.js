@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   MapPin, Utensils, CloudSun, Wind, AlertCircle, Phone, Wallet, Plane,
   Home, ChevronDown, ChevronUp, Navigation, Loader2, CloudRain, Sun, Cloud,
-  Lock, KeyRound, Info, Compass, Sparkles, Droplets, Clock,
+  Lock, KeyRound, Info, Compass, Sparkles, Droplets, Clock, Signal,
   CheckCircle, Banknote, FileText, AlertTriangle, Settings, Trash2,
   ShoppingBag, Ban, Smartphone, RefreshCw, Edit3, Save, Eye, Ticket,
   Train, Building2, BookOpen, Music, Wine, Gem, PawPrint, ArrowRight,
