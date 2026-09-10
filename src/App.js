@@ -1143,6 +1143,18 @@ const GuidePage = ({ isAdmin, isMember, noticeText, updateNoticeText }) => {
   ];
 
   const guideSections = [
+
+    { title: '老辣妹東京私房清單', icon: <Sparkles className="text-purple-500" />, desc: '在地人私房口袋名單，涵蓋各種類型店家。', color: 'bg-purple-50 border-purple-100', mapUrl: 'https://maps.app.goo.gl/RysGqhhHzJoKNkdRA?g_st=i', aiQuery: '老辣妹 東京 私房景點 推薦 2026 以中文回答' },
+    { title: '拍東京鐵塔地點', icon: <TokyoTowerIcon className="w-5 h-5" />, desc: '東京鐵塔各角度拍攝點清單。', color: 'bg-orange-50 border-orange-100', mapUrl: 'https://maps.app.goo.gl/Pr178mcT1pxRqGBq8?g_st=i', aiQuery: '東京鐵塔 拍照 私房景點 推薦 2026 以中文回答' },
+    { title: '日本喫茶四大天王', icon: <Utensils className="text-amber-700" />, desc: '喫茶文化必訪四大名店。', color: 'bg-amber-50 border-amber-100', mapUrl: 'https://maps.app.goo.gl/mG5pqZHTTVhFbM35A?g_st=i', aiQuery: '日本喫茶 四大天王 推薦 2026 以中文回答' },
+    { title: '東京甜點地圖', icon: <Gem className="text-rose-500" />, desc: '東京甜點店地圖清單。', color: 'bg-rose-50 border-rose-100', mapUrl: 'https://maps.app.goo.gl/SaEgYpDijW9QCvhJA?g_st=i', aiQuery: '東京 甜點 推薦 2026 以中文回答' },
+    { title: '東京拉麵百名店', icon: <Utensils className="text-red-700" />, desc: '拉麵百名店清單。', color: 'bg-red-50 border-red-100', mapUrl: 'https://maps.app.goo.gl/GRWPWPiTaieTWNNTA?g_st=i', aiQuery: '東京拉麵 百名店 推薦 2026 以中文回答' },
+    { title: '東京壽司百名店', icon: <Utensils className="text-blue-700" />, desc: '壽司百名店清單。', color: 'bg-blue-50 border-blue-100', mapUrl: 'https://maps.app.goo.gl/8cCZFT5WaiUHMxZM6?g_st=i', aiQuery: '東京壽司 百名店 推薦 2026 以中文回答' },
+    { title: '東京「喫茶店」百名店', icon: <Utensils className="text-amber-700" />, desc: '喫茶店百名店清單。', color: 'bg-amber-50 border-amber-100', mapUrl: 'https://maps.app.goo.gl/mKjRJTwXYihbgL8f8?g_st=i', aiQuery: '東京喫茶店 百名店 推薦 2026 以中文回答' },
+    { title: '東京異國料理百名店', icon: <Utensils className="text-teal-700" />, desc: '異國料理百名店清單。', color: 'bg-teal-50 border-teal-100', mapUrl: 'https://maps.app.goo.gl/ZvQnNAP3Cr4AFRf67?g_st=i', aiQuery: '東京異國料理 百名店 推薦 2026 以中文回答' },
+    { title: '東京鰻魚百名店', icon: <Utensils className="text-orange-700" />, desc: '鰻魚飯百名店清單。', color: 'bg-orange-50 border-orange-100', mapUrl: 'https://maps.app.goo.gl/1mV3HxhiDzzUFCgJ8?g_st=i', aiQuery: '東京鰻魚飯 百名店 推薦 2026 以中文回答' },
+    { title: '日式料理綜合百名店', icon: <Utensils className="text-red-700" />, desc: '日式料理綜合百名店清單。', color: 'bg-red-50 border-red-100', mapUrl: 'https://maps.app.goo.gl/vw7edQHQez6pYjp99?g_st=i', aiQuery: '日式料理 百名店 推薦 2026 以中文回答' },
+    { title: '秘湯大愛泡湯', icon: <Droplets className="text-blue-600" />, desc: '私房秘湯溫泉清單。', color: 'bg-blue-50 border-blue-100', mapUrl: 'https://maps.app.goo.gl/UicrWYDNNZYJASvPA?g_st=i', aiQuery: '東京 秘湯 溫泉 推薦 2026 以中文回答' },
     { title: '神保町書店街', icon: <BookOpen className="text-amber-700" />, desc: '書泉、企鵝書店等古書 / 新書店群，愛書人的聖地，離海老丸拉麵很近。', color: 'bg-amber-50 border-amber-100', mapUrl: 'https://maps.app.goo.gl/PpExGD3mQef9pxXi7?g_st=ic', aiQuery: '神保町 書店 古書店 推薦 2026 以中文回答' },
     { title: '淺草・藏前', icon: <Building2 className="text-red-600" />, desc: '雷門、仲見世通，藏前一帶則是文青小店與職人工藝品聚落。', color: 'bg-red-50 border-red-100', mapUrl: 'https://www.google.com/maps/search/?api=1&query=淺草雷門', aiQuery: '淺草 藏前 私房小店 咖啡廳 推薦 2026 以中文回答' },
     { title: '手作戒指體驗', icon: <Gem className="text-rose-500" />, desc: 'COIN LUCK 東京店，用真的日本硬幣現場手作一枚專屬戒指，只收現金。', color: 'bg-rose-50 border-rose-100', mapUrl: 'https://maps.app.goo.gl/1ng8a4jfFQhjzfiF8?g_st=ic', aiQuery: 'COIN LUCK 東京 硬幣戒指 體驗 心得 以中文回答' },
