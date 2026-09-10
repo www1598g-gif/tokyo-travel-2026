@@ -937,7 +937,7 @@ const TokyoTips = () => {
               <div className="min-w-[24px] text-blue-600 font-bold mt-1"><Train size={18} /></div>
               <div>
                 <strong className="text-stone-900 block mb-1">交通卡</strong>
-                <p className="text-xs text-stone-500">建議下載 Mobile Suica 或現場買實體 Suica/PASMO，東京地鐵、JR、公車幾乎都通用。悠遊卡在東京無法直接搭車。</p>
+                <p className="text-xs text-stone-500">建議使用apple-pay Suica 或現場買實體 Suica/PASMO，東京地鐵、JR、公車幾乎都通用。悠遊卡在東京無法直接搭車。</p>
               </div>
             </div>
             <div className="flex gap-3">
@@ -1336,8 +1336,8 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
               <div><div className="font-bold text-stone-800 text-sm">DIGEST 菜單翻譯</div><div className="text-[10px] text-stone-500">拍照即時翻譯日文菜單</div></div>
               <ArrowRight size={16} className="text-stone-400" />
             </a>
-            {appRow('Mobile Suica', '手機直接刷卡搭JR / 地鐵 / 公車，比實體卡方便', 'https://apps.apple.com/jp/app/mobile-suica/id515164368', 'https://play.google.com/store/apps/details?id=jp.co.jreast.mobilesuica')}
-            {appRow('東京 Metro / 都営交通アプリ', '地鐵路線圖、轉乘搜尋、票價查詢', 'https://apps.apple.com/jp/app/id1045511961', 'https://play.google.com/store/apps/details?id=jp.tokyometro.tokyometroapp')}
+            {appRow('ロケスマ (ROKESUMA)', '專門用來在日本快速尋找各種連鎖店、超商、超市、咖啡廳、加油站及公共設施的地圖查詢工具。', 'https://apps.apple.com/tw/app/%E3%83%AD%E3%82%B1%E3%82%B9%E3%83%9E/id498923187', 'https://play.google.com/store/apps/details?id=jp.d_advantage.locasma&hl=zh_TW')}
+            {appRow('東京地鐵JR巴士規劃軟體', '地鐵路線圖、轉乘搜尋、票價查詢', 'https://apps.apple.com/tw/app/japan-transit-planner-travel/id299490481', 'https://play.google.com/store/apps/details?id=jp.co.jorudan.nrkj')}
             <a href="https://static.japan.travel.navitime.com/web/walk/contents/html/boot/market.html?utm_source=safetytips&utm_medium=web&utm_campaign=safetytips" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100 active:scale-95 transition-all">
               <div><div className="font-bold text-stone-800 text-sm">Japan Travel by Navitime</div><div className="text-[10px] text-stone-500">離線地圖・交通路線・景點導覽</div></div>
               <ArrowRight size={16} className="text-stone-400" />
