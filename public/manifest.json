@@ -1,0 +1,20 @@
+{
+  "short_name": "Tokyo 2026",
+  "name": "東京 Tokyo 2026 自由行",
+  "icons": [
+    {
+      "src": "icon_t2.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icon_t2.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1B1F3B",
+  "background_color": "#0B0E2A"
+}
