@@ -1444,7 +1444,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
 
           
 {/* 佑任短句本 */}
-<a href="https://drive.google.com/file/d/1EPeIs8EED3Ul8bBv6hb0km7Lgfv7yY4l/view?usp=drive_link" target="_blank" rel="noreferrer"
+<a href="https://drive.google.com/file/d/1fyIHU1bAr2m7R7PUwa0VgwoCYLwuRLC-/view?usp=drive_link" target="_blank" rel="noreferrer"
   className="mt-3 flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 active:scale-95 transition-all"
 >
   <div>
