@@ -1415,7 +1415,9 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
               <div><div className="font-bold text-stone-800 text-sm">Japan Travel by Navitime</div><div className="text-[10px] text-stone-500">離線地圖・交通路線・景點導覽</div></div>
               <ArrowRight size={16} className="text-stone-400" />
             </a>
+            {appRow('Google 翻譯', '相機即拍即翻菜單/告示牌，比對話翻譯更常用到', 'https://apps.apple.com/tw/app/google-translate/id414706506', 'https://play.google.com/store/apps/details?id=com.google.android.apps.translate')}
             {appRow('ecbo cloak 行李寄放', '找附近寄放行李的店家', 'https://apps.apple.com/tw/app/ecbo-cloak-%E6%97%A5%E6%9C%AC%E5%AF%84%E7%89%A9%E6%9C%8D%E5%8B%99/id1443707795', 'https://play.google.com/store/apps/details?id=io.ecbo.cloak&pcampaignid=web_share')}
+            {appRow('コインロッカーなび', '查詢車站投幣式置物櫃即時空位', 'https://apps.apple.com/jp/app/id1439281894', 'https://play.google.com/store/apps/details?id=jp.coinlocker.navi')}
             {appRow('tenki.jp', '日本氣象協會・最準確日本天氣預報', 'https://apps.apple.com/tw/app/tenki-jp-%E5%A4%A9%E6%B0%97%E4%BA%88%E5%A0%B1-%E9%9B%A8%E9%9B%B2%E3%83%AC%E3%83%BC%E3%83%80%E3%83%BC-%E5%9C%B0%E9%9C%87%E9%80%9F%E5%A0%B1/id433865746', 'https://play.google.com/store/apps/details?id=jwa.or.jp.tenkijp3&hl=zh_TW')}
             {appRow('樂桃航空 Peach', '航班查詢・報到・行李・訂位管理', 'https://apps.apple.com/jp/app/peach-aviation/id1032087975', 'https://play.google.com/store/apps/details?id=jp.co.peachaviation.app')}
             {appRow('VoiceTra', '日本 NICT 開發・31語言語音即時翻譯', 'https://apps.apple.com/tw/app/voicetra/id581137577', 'https://play.google.com/store/apps/details?id=jp.go.nict.voicetra')}
@@ -1423,6 +1425,7 @@ const UtilsPage = ({ isAdmin, isMember, systemInfo, updateSystemInfo }) => {
             {appRow('Tabelog 食べログ', '日本最大餐廳評分・在地口碑查詢', 'https://apps.apple.com/tw/app/tabelog-%E6%97%A5%E6%9C%AC%E9%A4%90%E5%BB%B3%E6%8E%A2%E7%B4%A2-%E8%A8%82%E4%BD%8D%E8%88%87%E8%A9%95%E5%83%B9%E5%85%A8%E6%96%B9%E4%BD%8D%E5%B9%B3%E5%8F%B0/id6752922875', 'https://play.google.com/store/apps/details?id=com.kakaku.tabelog.tourists&hl=zh_TW')}
             {appRow('Payke', '掃條碼查日本商品成分・免稅優惠券', 'https://apps.apple.com/tw/app/payke-%E4%BD%BF%E7%94%A8%E5%84%AA%E6%83%A0%E5%88%B8-%E8%AE%93%E6%97%A5%E6%9C%AC%E6%97%85%E8%A1%8C%E6%9B%B4%E5%88%92%E7%AE%97-%E7%BF%BB%E8%AD%AF-%E8%A9%95%E5%83%B9/id1040452788', 'https://play.google.com/store/apps/details?id=jp.co.payke.Payke1')}
             {appRow('MyJapan+ by JCB', 'JCB卡專屬eSIM優惠、連鎖店優惠券、掃碼查商品中文資訊', 'https://apps.apple.com/tw/app/myjapan-by-jcb/id6762969747', 'https://play.google.com/store/apps/details?id=jcb.myjapanplus.app&hl=zh_TW')}
+            {appRow('TunnelBear VPN', '加拿大 VPN・跨國解鎖串流服務', 'https://apps.apple.com/tw/app/tunnelbear-vpn/id564842283', 'https://play.google.com/store/apps/details/TunnelBear_VPN?id=com.tunnelbear.android&hl=zh_TW')}
             <a href="https://linshibi.com/" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100 active:scale-95 transition-all">
               <div><div className="font-bold text-stone-800 text-sm">林氏壁情報站</div><div className="text-[10px] text-stone-500">日本旅遊資訊・攻略・必買推薦懶人包</div></div>
               <ArrowRight size={16} className="text-stone-400" />
