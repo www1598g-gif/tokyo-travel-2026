@@ -793,7 +793,7 @@ const UTILS_DATA = {
     { type: '回程', date: '9/27 (日)', flightNo: 'MM627', time: '22:15 起飛', airline: '樂桃航空 Peach', from: '成田', fromCode: 'NRT', fromTerminal: '', to: '台北', toCode: 'TPE', toTerminal: 'T1' },
   ],
   accommodation: {
-    name: 'Airbnb（田端新町）',
+    name: 'Airbnb',
     address: '東京都北区田端新町1-6-7',
     station: '最寄站：JR「西日暮里」站',
     keyNote: '鑰匙在建物左側的鑰匙盒（Key Box）內，密碼「0708」',
